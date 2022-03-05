@@ -1,0 +1,8 @@
+{
+  "name": "data-picker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/AhmadRezaAtaee/Data-Picker.git",
+  "author": "AhmadRezaAtaee <ahmadr.ataee@gmail.com>",
+  "license": "MIT"
+}
