@@ -2,7 +2,7 @@ import axios, { AxiosResponse } from "axios";
 import { HttpRequestConfigDefault, HttpRequestConfig, HttpResponse } from "./http";
 import { Target } from "./target";
 
-export class Picker {
+export class Picker<T> {
 
 	private target: Target
 
@@ -18,6 +18,8 @@ export class Picker {
 	}
 
 	response: HttpResponse
+	private parsed: T
+	public selected: any
 
 	fetch(): Promise<this>;
 	fetch(url: string, config?: Partial<Omit<HttpRequestConfig, 'url'>>): Promise<this>;
@@ -54,13 +56,9 @@ export class Picker {
 		return this
 	}
 
-	parse(docType: 'html' | 'json') {
-		switch (docType) {
-			case 'html':
-				this.target.document
-				break;
-			case 'json':
-				break;
-		}
+	parse(parser: (doc: string) => T) {
+		this.parsed = parser(this.target.document)
+		return this
 	}
+
 }
