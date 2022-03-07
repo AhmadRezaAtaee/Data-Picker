@@ -1,4 +1,3 @@
-// PickData - Picker - PickedData - PickData
 import axios, { AxiosResponse } from "axios";
 import { HttpRequestConfigDefault, HttpRequestConfig, HttpResponse } from "./http";
 import { Target } from "./target";
@@ -55,4 +54,13 @@ export class Picker {
 		return this
 	}
 
+	parse(docType: 'html' | 'json') {
+		switch (docType) {
+			case 'html':
+				this.target.document
+				break;
+			case 'json':
+				break;
+		}
+	}
 }
