@@ -4,8 +4,8 @@ export class Target extends URL {
 	constructor(url: string) {
 		super(url)
 	}
-	document
-	setDoc(document: any) {
+	public document: string
+	setDoc(document: string) {
 		this.document = document
 	}
 }
