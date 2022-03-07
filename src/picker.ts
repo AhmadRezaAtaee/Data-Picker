@@ -61,4 +61,9 @@ export class Picker<T> {
 		return this
 	}
 
+	select(selector: (parsed: T) => any) {
+		this.selected = selector(this.parsed)
+		return this
+	}
+
 }
